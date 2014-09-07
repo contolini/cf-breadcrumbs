@@ -1,0 +1,35 @@
+{
+  "name": "cf-breadcrumbs",
+  "version": "1.2.0",
+  "description": "Breadcrumb patterns for Capital Framework.",
+  "keywords": [
+    "capital-framework",
+    "capital",
+    "breadcrumbs",
+    "less"
+  ],
+  "authors": [
+    {
+      "name": "Consumer Financial Protection Bureau",
+      "url": "https://cfpb.github.io/"
+    }
+  ],
+  "homepage": "https://github.com/cfpb/cf-breadcrumbs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfpb/cf-breadcrumbs.git"
+  },
+  "license": "https://github.com/cfpb/cf-breadcrumbs/blob/gh-pages/TERMS.md",
+  "main": "src/cf-breadcrumbs.less",
+  "dependencies": {
+    "cf-core": "git://github.com/cfpb/cf-core.git"
+  },
+  "exportsOverride": {
+    "cf-*": {
+      "css": "src/**/*.css",
+      "less": "src/**/*.less",
+      "fonts": "src/fonts/*.*",
+      "js": "src/**/*.js"
+    }
+  }
+}

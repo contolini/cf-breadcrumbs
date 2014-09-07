@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Capital Framework
+   Breadcrumb patterns
+   ========================================================================== */
+
+/* topdoc
+    name: Breadcrumbs
+    family: cf-breadcrumbs
+    patterns:
+    - name: Default breadcrumbs (base class)
+      markup: |
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs_item">
+                <a class="breadcrumbs_link" href="#home">
+                    Home
+                </a>
+            </li>
+            <li class="breadcrumbs_item">
+                <a class="breadcrumbs_link" href="#some-place-else">
+                    Some place else
+                </a>
+            </li>
+            <li class="breadcrumbs_item">
+                <a class="breadcrumbs_link" href="#another-place-completely">
+                    Another place completely
+                </a>
+            </li>
+            <li class="breadcrumbs_item breadcrumbs_item__current">
+                Current page
+            </li>
+        </ul>
+      codenotes:
+        - .breadcrumbs
+    tags:
+    - cf-breadcrumbs
+*/
+
+.breadcrumbs {
+    @font-size: 16px;
+
+    margin: unit(15px / @base-font-size-px, em) 0;
+    padding: 0;
+    color: @darkgray;
+    font-size: unit(@font-size / @base-font-size-px, em);
+    .webfont-medium();
+    list-style-type: none;
+
+    &_item {
+        .u-inline-block();
+        
+        // Slash styles
+        // Position the slash relative to this item
+        position: relative;
+        margin: unit(6px / @font-size, em)
+                unit(6px / @font-size, em)
+                unit(6px / @font-size, em)
+                0;
+        padding-right: unit(10px / @font-size, em);
+        &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: @pacific-50;
+            transform: skewX(-20deg);
+        }
+        &&__current:after {
+            background: @gray-50;
+        }
+    }
+
+    &_link {
+        .u-link__no-border();
+        .u-link__hover-border();
+    }
+}
+
+
+/* topdoc
+  name: EOF
+  eof: true
+*/
