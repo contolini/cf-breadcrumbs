@@ -25,7 +25,7 @@
                     Another place completely
                 </a>
             </li>
-            <li class="breadcrumbs_item breadcrumbs_item__current">
+            <li class="breadcrumbs_item">
                 Current page
             </li>
         </ul>
@@ -38,8 +38,10 @@
 .breadcrumbs {
     @font-size: 16px;
 
+    .u-inline-block();
     margin: unit(15px / @base-font-size-px, em) 0;
-    padding: 0;
+    padding: 0 0 unit(10px / @font-size, em);
+    border-bottom: 4px solid @green;
     color: @darkgray;
     font-size: unit(@font-size / @base-font-size-px, em);
     .webfont-medium();
@@ -51,10 +53,7 @@
         // Slash styles
         // Position the slash relative to this item
         position: relative;
-        margin: unit(6px / @font-size, em)
-                unit(6px / @font-size, em)
-                unit(6px / @font-size, em)
-                0;
+        margin: 0 unit(6px / @font-size, em) 0 0;
         padding-right: unit(10px / @font-size, em);
         &:after {
             content: "";
@@ -64,11 +63,8 @@
             top: 0;
             right: 0;
             bottom: 0;
-            background: @pacific-50;
-            transform: skewX(-20deg);
-        }
-        &&__current:after {
             background: @gray-50;
+            transform: skewX(-20deg);
         }
     }
 

@@ -37,7 +37,7 @@
             Another place completely
         </a>
     </li>
-    <li class="breadcrumbs_item breadcrumbs_item__current">
+    <li class="breadcrumbs_item">
         Current page
     </li>
 </ul>
@@ -60,12 +60,12 @@
             Another place completely
         &lt;/a&gt;
     &lt;/li&gt;
-    &lt;li class=&quot;breadcrumbs_item breadcrumbs_item__current&quot;&gt;
+    &lt;li class=&quot;breadcrumbs_item&quot;&gt;
         Current page
     &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
             <form action="http://codepen.io/pen/define" method="POST" target="_blank" class="docs-pattern_footer-edit">
-              <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-breadcrumbs/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;ul class=\&amp;quot;breadcrumbs\&amp;quot;&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#home\&amp;quot;&gt;\n            Home\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#some-place-else\&amp;quot;&gt;\n            Some place else\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#another-place-completely\&amp;quot;&gt;\n            Another place completely\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item breadcrumbs_item__current\&amp;quot;&gt;\n        Current page\n    &lt;/li&gt;\n&lt;/ul&gt;\n&amp;quot;}">
+              <input type="hidden" name="data" value="{&amp;quot;css&amp;quot;:&amp;quot;body { padding: 1em; }&amp;quot;,&amp;quot;css_external&amp;quot;:&amp;quot;http://cfpb.github.io/cf-breadcrumbs/docs/static/css/main.css&amp;quot;,&amp;quot;html&amp;quot;:&amp;quot;\n&lt;ul class=\&amp;quot;breadcrumbs\&amp;quot;&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#home\&amp;quot;&gt;\n            Home\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#some-place-else\&amp;quot;&gt;\n            Some place else\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        &lt;a class=\&amp;quot;breadcrumbs_link\&amp;quot; href=\&amp;quot;#another-place-completely\&amp;quot;&gt;\n            Another place completely\n        &lt;/a&gt;\n    &lt;/li&gt;\n    &lt;li class=\&amp;quot;breadcrumbs_item\&amp;quot;&gt;\n        Current page\n    &lt;/li&gt;\n&lt;/ul&gt;\n&amp;quot;}">
               <input type="submit" value="edit on codepen.io" class="docs-pattern_footer-edit-btn">
             </form>
             <ul class="docs-codenotes">
@@ -78,8 +78,10 @@
       </div>
       <div class="docs-css">
         <pre class="docs-code"><code data-language="css">.breadcrumbs {
+  display: inline-block;
   margin: 0.9375em 0;
-  padding: 0;
+  padding: 0 0 0.625em;
+  border-bottom: 4px solid #2cb34a;
   color: #43484e;
   font-size: 1em;
   font-family: &quot;AvenirNextLTW01-Medium&quot;, Arial, sans-serif;
@@ -87,13 +89,16 @@
   font-weight: 500;
   list-style-type: none;
 }
+.lt-ie8 .breadcrumbs {
+  display: inline;
+}
 .lt-ie9 .breadcrumbs {
   font-weight: normal !important;
 }
 .breadcrumbs_item {
   display: inline-block;
   position: relative;
-  margin: 0.375em 0.375em 0.375em 0;
+  margin: 0 0.375em 0 0;
   padding-right: 0.625em;
 }
 .lt-ie8 .breadcrumbs_item {
@@ -107,13 +112,10 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: #7fb8e6;
+  background: #babbbd;
   -webkit-transform: skewX(-20deg);
   -ms-transform: skewX(-20deg);
   transform: skewX(-20deg);
-}
-.breadcrumbs_item.breadcrumbs_item__current:after {
-  background: #babbbd;
 }
 .breadcrumbs_link {
   border-bottom-width: 0 !important;
