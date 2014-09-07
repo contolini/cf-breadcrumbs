@@ -40,10 +40,11 @@
 
     .u-inline-block();
     margin: unit(15px / @base-font-size-px, em) 0;
-    padding: 0 0 unit(10px / @font-size, em);
+    padding: 0;
     border-bottom: 4px solid @green;
     color: @darkgray;
     font-size: unit(@font-size / @base-font-size-px, em);
+    line-height: 1;
     .webfont-medium();
     list-style-type: none;
 
@@ -53,7 +54,10 @@
         // Slash styles
         // Position the slash relative to this item
         position: relative;
-        margin: 0 unit(6px / @font-size, em) 0 0;
+        margin: 0
+                unit(6px / @font-size, em)
+                unit(10px / @font-size, em)
+                0;
         padding-right: unit(10px / @font-size, em);
         &:after {
             content: "";
