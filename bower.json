@@ -22,7 +22,7 @@
   "license": "https://github.com/cfpb/cf-breadcrumbs/blob/gh-pages/TERMS.md",
   "main": "src/cf-breadcrumbs.less",
   "dependencies": {
-    "cf-core": "git://github.com/cfpb/cf-core.git"
+    "cf-core": "cfpb/cf-core#dev
   },
   "exportsOverride": {
     "cf-*": {
